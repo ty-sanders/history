@@ -3,7 +3,7 @@ library(shiny)
 
 
 
-setwd("C:/Users/tyman/Desktop/R_Files/shiny/history")
+#setwd("C:/Users/tyman/Desktop/R_Files/shiny/history")
 #data <- read_csv("data/states.csv")
 
 
