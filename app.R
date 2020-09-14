@@ -59,8 +59,8 @@ server <- function(input, output) {
     selected <-
         reactive({
             data %>%
-                filter(month %in% input$month & day %in% input$day) %>%
-                slice_sample(1)
+                dplyr::filter(month %in% input$month & day %in% input$day) %>%
+                dplyr::slice_sample(1)
         })
     
     no_data <- 
