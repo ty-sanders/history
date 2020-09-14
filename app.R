@@ -5,7 +5,7 @@ library(dplyr)
 
 #setwd("C:/Users/tyman/Desktop/R_Files/shiny/history")
 
-data <- read_csv("data/states.csv")
+data <- read.csv("data/states.csv")
 
 
 options(shiny.sanitize.errors = TRUE)
