@@ -1,25 +1,15 @@
 library(shiny)
-library(tidyverse)
-library(lubridate)
-library(png)
-library(imager)
+
+
 
 
 setwd("C:/Users/tyman/Desktop/R_Files/shiny/history")
-data <- read_csv("data/states.csv")
+#data <- read_csv("data/states.csv")
 
 
 options(shiny.sanitize.errors = TRUE)
 
 
-data <- data %>%
-    mutate(photo_path = "us_history.png")
-
-data <- data %>%
-    mutate(source_path = State)
-
-data[23,]$photo_path <- "Flag_of_Maine.png"
-data[27,]$photo_path <- "Florida.png"
 
 months <- month.name
 this_month <- "March"   
