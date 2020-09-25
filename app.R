@@ -1,9 +1,8 @@
 library(shiny)
 library(dplyr)
 
-#setwd("C:/Users/tyman/Desktop/R_Files/shiny/history")
 
-data <- read.csv("data/states.csv")
+data <- read.csv("data/history.csv")
 
 
 options(shiny.sanitize.errors = TRUE)
@@ -57,14 +56,14 @@ server <- function(input, output) {
     selected <-
         reactive({
             data %>%
-                dplyr::filter(month %in% input$month & day %in% input$day) %>%
-                dplyr::slice_sample(1)
+                filter(month %in% input$month & day %in% input$day) %>%
+                slice_sample(1)
         })
     
     no_data <- 
         reactive({
             if (nrow(selected() < 1)) {
-               dplyr::tribble(~"Sentence", 
+               tribble(~"Sentence", 
                        "Sentence")
             } else {
                 selected()}
